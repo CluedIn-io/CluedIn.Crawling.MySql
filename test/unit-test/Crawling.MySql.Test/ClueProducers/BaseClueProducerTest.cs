@@ -18,7 +18,7 @@ namespace Crawling.MySql.Test.ClueProducers
         protected abstract BaseClueProducer<T> Sut { get; }
         protected abstract EntityType ExpectedEntityType { get; }
 
-        public BaseClueProducerTest()
+        protected BaseClueProducerTest()
         {
             _logger = new Mock<ILogger>();
             _clueFactory = new Mock<IClueFactory>();

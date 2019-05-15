@@ -19,7 +19,7 @@ namespace CluedIn.Providers.Mesh
     public override Guid GetProviderId() =>
       MySqlConstants.ProviderId;
 
-    /* TODO de-comment and implement the override for Accept method in your deriverd Provider class if requiring any more behavious than base class implementation
+    /* TODO remove comment and implement the override for Accept method in your derived Provider class if requiring more functionality beyond the base class implementation
     public override bool Accept(MeshDataCommand command, MeshQuery query, IEntity entity)
     {
       // TODO filter on action 

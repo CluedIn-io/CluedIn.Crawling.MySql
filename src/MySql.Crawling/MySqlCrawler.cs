@@ -16,8 +16,7 @@ namespace CluedIn.Crawling.MySql
 
         public IEnumerable<object> GetData(CrawlJobData jobData)
         {
-            var mysqlcrawlJobData = jobData as MySqlCrawlJobData;
-            if(mysqlcrawlJobData == null)
+            if (!(jobData is MySqlCrawlJobData mysqlcrawlJobData))
             {
                 yield break;
             }

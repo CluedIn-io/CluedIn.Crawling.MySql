@@ -100,9 +100,7 @@ namespace CluedIn.Provider.MySql
     {
       if (jobData == null) throw new ArgumentNullException(nameof(jobData));
 
-      var mysqlCrawlJobData = jobData as MySqlCrawlJobData;
-
-      if (mysqlCrawlJobData == null)
+      if (!(jobData is MySqlCrawlJobData mysqlCrawlJobData))
       {
         throw new Exception("Wrong CrawlJobData type");
       }
