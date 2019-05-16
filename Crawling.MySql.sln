@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{D10B16B9-F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{CBD22F04-6415-467D-B079-44D5B01965D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawling.MySql.Integration.Test", "test\integration\Crawling.MySql.Integration.Test\Crawling.MySql.Integration.Test.csproj", "{99F9EA75-A5F3-48CF-87E4-C4B7481787D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{24C48AD5-562B-4C9B-9FC3-52EB0C79007C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24C48AD5-562B-4C9B-9FC3-52EB0C79007C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24C48AD5-562B-4C9B-9FC3-52EB0C79007C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F9EA75-A5F3-48CF-87E4-C4B7481787D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F9EA75-A5F3-48CF-87E4-C4B7481787D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F9EA75-A5F3-48CF-87E4-C4B7481787D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F9EA75-A5F3-48CF-87E4-C4B7481787D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{6068A50D-8E76-434E-ADE8-2E4A0A66333D} = {57E743C9-2E9B-4CA7-A9BD-E89B46B390E9}
 		{D10B16B9-F33D-498D-8C6F-442B0EC7C6E2} = {32830E2D-B53F-4D0F-984E-806248F7C8D8}
 		{CBD22F04-6415-467D-B079-44D5B01965D1} = {32830E2D-B53F-4D0F-984E-806248F7C8D8}
+		{99F9EA75-A5F3-48CF-87E4-C4B7481787D3} = {CBD22F04-6415-467D-B079-44D5B01965D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9F65A0D1-C784-4ABE-8B71-22B8FBD404C0}
