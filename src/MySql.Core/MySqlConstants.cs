@@ -22,7 +22,7 @@ namespace CluedIn.Crawling.MySql.Core
 
      
 
-    public static readonly Guid ProviderId = Guid.Parse("3e479de2-3b8e-4b26-9a46-d1a359295c4b");   // TODO: Replace value
+    public static readonly Guid ProviderId = Guid.Parse("e905382e-aa30-45fa-b434-3c9fb60a358f");   // TODO: Replace value
     public const string ProviderName = "MySql";         // TODO: Replace value
     public const bool SupportsConfiguration = true;             // TODO: Replace value
     public const bool SupportsWebHooks = false;             // TODO: Replace value

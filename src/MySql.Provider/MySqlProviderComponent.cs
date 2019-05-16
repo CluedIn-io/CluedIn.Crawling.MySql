@@ -3,6 +3,8 @@ using Castle.MicroKernel.Registration;
 using CluedIn.Core;
 using CluedIn.Core.Providers;
 // 
+using CluedIn.Core.Webhooks;
+// 
 using CluedIn.Crawling.MySql.Core;
 using CluedIn.Crawling.MySql.Infrastructure.Installers;
 // 
@@ -41,6 +43,9 @@ namespace CluedIn.Provider.MySql
 
             Container.Register(Types.FromThisAssembly().BasedOn<IProvider>().WithServiceFromInterface().If(t => !t.IsAbstract).LifestyleSingleton());
             Container.Register(Types.FromThisAssembly().BasedOn<IEntityActionBuilder>().WithServiceFromInterface().If(t => !t.IsAbstract).LifestyleSingleton());
+
+            Container.Register(Types.FromThisAssembly().BasedOn<IWebhookProcessor>().WithServiceFromInterface().If(t => !t.IsAbstract).LifestyleSingleton());
+            Container.Register(Types.FromThisAssembly().BasedOn<IWebhookPrevalidator>().WithServiceFromInterface().If(t => !t.IsAbstract).LifestyleSingleton());
 
 
 
