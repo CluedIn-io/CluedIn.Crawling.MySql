@@ -1,17 +1,8 @@
-using System;
-using System.Collections.Generic;
 using CluedIn.Core.Data;
+using System.Collections.Generic;
 
 namespace CluedIn.Crawling.MySql.Core.Models
 {
-  public class _SampleFile_  // TODO replace usages with Model ?
-  {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public int FolderId { get; set; }
-    public Uri Uri { get; set; }
-  }
-  
     public class Model
     {
         public List<object> Columns { get; set; }

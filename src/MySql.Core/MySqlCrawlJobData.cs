@@ -4,12 +4,10 @@ using System.Collections.Generic;
 
 namespace CluedIn.Crawling.MySql.Core
 {
-  public class MySqlCrawlJobData : CrawlJobData
-  {
-    public string ApiKey { get; set; }  // TODO is this required ?
-	
-    public string ConnectionString { get; set; }
+    public class MySqlCrawlJobData : CrawlJobData
+    {
+        public string ConnectionString { get; set; }
 
-    public List<TableMapping> TableMappings { get; set; }
-  }
+        public List<TableMapping> TableMappings { get; set; }
+    }
 }

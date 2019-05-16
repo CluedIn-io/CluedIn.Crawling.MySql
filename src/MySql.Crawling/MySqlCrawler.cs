@@ -16,7 +16,8 @@ namespace CluedIn.Crawling.MySql
 
         public IEnumerable<object> GetData(CrawlJobData jobData)
         {
-            if (!(jobData is MySqlCrawlJobData mysqlcrawlJobData))
+            var mysqlcrawlJobData = jobData as MySqlCrawlJobData;
+            if(mysqlcrawlJobData == null)
             {
                 yield break;
             }
@@ -28,10 +29,6 @@ namespace CluedIn.Crawling.MySql
             foreach( var folder in client.GetFolders())
             {
                 yield return folder;
-                foreach (var file in client.GetFilesForFolder(folder.Id))
-                {
-                    yield return file;
-                }
             }
         }       
     }

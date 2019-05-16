@@ -1,15 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <SkipValidatePackageReferences>true</SkipValidatePackageReferences>
-    <ProjectGuid>{5F649221-EBE9-4E5C-9463-F4E40A435435}</ProjectGuid>
+    <ProjectGuid>{3614D206-499A-47C5-98B1-B45F7B9556BC}</ProjectGuid>
     <RootNamespace>CluedIn.Crawling.MySql</RootNamespace>
     <AssemblyName>CluedIn.Crawling.MySql</AssemblyName>
     <TargetFramework>net452</TargetFramework>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <AssemblyTitle>CluedIn.Crawling.MySql</AssemblyTitle>
-    <Product>CluedIn.Crawling.MySql</Product>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <AssemblyTitle>Template.Crawling</AssemblyTitle>
+    <Product>Template.Crawling</Product>
+    <OutputPath>..\..\..\bin\$(Configuration)\ServerComponent\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -21,6 +19,22 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="4.3.1" />
+    <PackageReference Include="Castle.Windsor" Version="4.1.1" />
+    <PackageReference Include="CluedIn.Core" Version="2.18.0-alpha0847" />
+    <PackageReference Include="CluedIn.Crawling" Version="2.18.0-alpha0847" />
+    <PackageReference Include="ComponentHost" Version="1.0.0.46" />
+    <PackageReference Include="Microsoft.Web.Xdt" Version="2.1.1" />
+    <PackageReference Include="Rx-Core" Version="2.2.5" />
+    <PackageReference Include="Rx-Interfaces" Version="2.2.5" />
+    <PackageReference Include="Rx-Linq" Version="2.2.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\MySql.Core\Crawling.MySql.Core.csproj" />
     <ProjectReference Include="..\MySql.Infrastructure\Crawling.MySql.Infrastructure.csproj" />
   </ItemGroup>
@@ -28,19 +42,5 @@
     <EmbeddedResource Include="MySqlCrawlerComponent.config">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="CluedIn.Core" Version="2.18.0-alpha0846" />
-    <PackageReference Include="CluedIn.Crawling" Version="2.18.0-alpha0846" />
-    <PackageReference Include="ComponentHost" Version="1.0.0.46" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-    <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
-    <PackageReference Include="Microsoft.Web.Xdt" Version="2.1.1" />
-    <PackageReference Include="Rx-Core" Version="2.2.5" />
-    <PackageReference Include="Rx-Interfaces" Version="2.2.5" />
-    <PackageReference Include="Rx-Linq" Version="2.2.5" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
-    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
-    <PackageReference Include="System.ServiceModel.Primitives" Version="4.4.1" />
   </ItemGroup>
 </Project>

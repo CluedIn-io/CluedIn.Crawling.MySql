@@ -2,19 +2,17 @@ using Castle.MicroKernel.Registration;
 
 using CluedIn.Core;
 using CluedIn.Core.Providers;
-// 
 using CluedIn.Core.Webhooks;
-// 
 using CluedIn.Crawling.MySql.Core;
 using CluedIn.Crawling.MySql.Infrastructure.Installers;
-// 
 using CluedIn.Server;
+
 using ComponentHost;
 
 namespace CluedIn.Provider.MySql
 {
     [Component(MySqlConstants.ProviderName, "Providers", ComponentType.Service, ServerComponents.ProviderWebApi, Components.Server, Components.DataStores, Isolation = ComponentIsolation.NotIsolated)]
-    public sealed class MySqlProviderComponent : ServiceApplicationComponent<EmbeddedServer>
+    public class MySqlProviderComponent : ServiceApplicationComponent<EmbeddedServer>
     {
         /**********************************************************************************************************
          * CONSTRUCTOR
@@ -27,9 +25,7 @@ namespace CluedIn.Provider.MySql
         public MySqlProviderComponent(ComponentInfo componentInfo)
             : base(componentInfo)
         {
-            // Dev. Note: Potential for compiler warning here ... CA2214: Do not call overridable methods in constructors
-            //   this class has been sealed to prevent the CA2214 waring being raised by the compiler
-            Container.Register(Component.For<MySqlProviderComponent>().Instance(this));  
+            Container.Register(Component.For<MySqlProviderComponent>().Instance(this));  // Dev. Note: bad practice to call virtual member in ctor
         }
 
         /**********************************************************************************************************
@@ -40,14 +36,9 @@ namespace CluedIn.Provider.MySql
         public override void Start()
         {
             Container.Install(new InstallComponents());
-
+            
             Container.Register(Types.FromThisAssembly().BasedOn<IProvider>().WithServiceFromInterface().If(t => !t.IsAbstract).LifestyleSingleton());
             Container.Register(Types.FromThisAssembly().BasedOn<IEntityActionBuilder>().WithServiceFromInterface().If(t => !t.IsAbstract).LifestyleSingleton());
-
-            Container.Register(Types.FromThisAssembly().BasedOn<IWebhookProcessor>().WithServiceFromInterface().If(t => !t.IsAbstract).LifestyleSingleton());
-            Container.Register(Types.FromThisAssembly().BasedOn<IWebhookPrevalidator>().WithServiceFromInterface().If(t => !t.IsAbstract).LifestyleSingleton());
-
-
 
             State = ServiceState.Started;
         }
