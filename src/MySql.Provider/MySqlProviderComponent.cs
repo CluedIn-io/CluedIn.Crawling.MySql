@@ -2,7 +2,6 @@ using Castle.MicroKernel.Registration;
 
 using CluedIn.Core;
 using CluedIn.Core.Providers;
-using CluedIn.Core.Webhooks;
 using CluedIn.Crawling.MySql.Core;
 using CluedIn.Crawling.MySql.Infrastructure.Installers;
 using CluedIn.Server;

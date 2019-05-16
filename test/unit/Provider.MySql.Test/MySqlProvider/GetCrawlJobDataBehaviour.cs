@@ -1,9 +1,7 @@
 using AutoFixture.Xunit2;
-using Should;
 using System;
 using System.Collections.Generic;
 using CluedIn.Core;
-using CluedIn.Core.Providers;
 using Xunit;
 
 namespace Provider.MySql.Test.MySqlProvider

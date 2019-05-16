@@ -5,8 +5,6 @@ using CluedIn.Crawling.MySql.Core.Models;
 using CluedIn.Crawling.Factories;
 using CluedIn.Core;
 using CluedIn.Crawling.MySql.Vocabularies;
-using CluedIn.Crawling.Helpers;
-using CluedIn.Crawling.MySql.Infrastructure;
 
 namespace CluedIn.Crawling.MySql.ClueProducers
 {
