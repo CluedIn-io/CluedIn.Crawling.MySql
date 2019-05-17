@@ -24,7 +24,10 @@ Describe 'Project Tests' -Tags 'CodeQuality' , 'Quality' {
 
                 $projectFile = $_ | Select-Object -ExpandProperty FullName
 
-                $expectedPatterns = @( '<OutputPath>bin\$(Configuration)\</OutputPath>' )
+                $expectedPatterns = @(
+                    '<OutputPath>bin\$(Configuration)\</OutputPath>' ,
+                    '<PackageReference'
+                )
 
                 $expectedPatterns | ForEach-Object {
 
@@ -38,7 +41,11 @@ Describe 'Project Tests' -Tags 'CodeQuality' , 'Quality' {
                     }
                 }
 
-                $removedPatterns = @( 'HintPath' )
+                $removedPatterns = @(
+                    'HintPath' ,
+                    'packages.config' ,
+                    'SpecificVersion'
+                )
 
                 $removedPatterns | ForEach-Object {
 
