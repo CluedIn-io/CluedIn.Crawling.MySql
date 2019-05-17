@@ -1,6 +1,6 @@
 Set-StrictMode -Version Latest
 
-Describe 'Project Tests' -Tags 'CodeQuality' , 'Quality' {
+Describe 'Project Tests' -Tags 'Acceptance' , 'Quality' {
 
     $root = Join-Path -Path $PSScriptRoot -ChildPath '..\..' -Resolve
 
