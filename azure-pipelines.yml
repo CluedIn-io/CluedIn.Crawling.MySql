@@ -55,13 +55,13 @@ jobs:
 
   # Build
   - task: DotNetCoreCLI@2
-    displayName: 'Build solution'
+    displayName: 'Build Solution'
     inputs:
       command: 'build'
 
-  # Test
+  # Unit and Integration Test
   - task: DotNetCoreCLI@2
-    displayName: 'Run tests'
+    displayName: 'Run Unit and Integration tests'
     inputs:
       command: 'test'
 
