@@ -38,7 +38,7 @@ Describe 'Project Tests' -Tags 'CodeQuality' , 'Quality' {
                     }
                 }
 
-                $removedPatterns = @( 'TODO' )
+                $removedPatterns = @( 'HintPath' )
 
                 $removedPatterns | ForEach-Object {
 
