@@ -4,8 +4,8 @@
     <RootNamespace>CluedIn.Crawling.MySql.Infrastructure</RootNamespace>
     <AssemblyName>CluedIn.Crawling.MySql.Infrastructure</AssemblyName>
     <TargetFramework>net452</TargetFramework>
-    <AssemblyTitle>Crawling._Crawler_.Client</AssemblyTitle>
-    <Product>Crawling._Crawler_.Client</Product>
+    <AssemblyTitle>Crawling.MySql.Infrastructure</AssemblyTitle>
+    <Product>CCrawling.MySql.Infrastructure</Product>
     <OutputPath>bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
