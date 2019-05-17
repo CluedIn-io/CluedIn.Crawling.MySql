@@ -7,7 +7,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <AssemblyTitle>Template.Crawling</AssemblyTitle>
     <Product>Template.Crawling</Product>
-    <OutputPath>..\..\..\bin\$(Configuration)\ServerComponent\</OutputPath>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>

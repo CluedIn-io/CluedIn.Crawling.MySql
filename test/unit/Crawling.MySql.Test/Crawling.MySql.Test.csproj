@@ -4,14 +4,13 @@
     <TargetFramework>net452</TargetFramework>
     <AssemblyTitle>Crawling.MySql.Test</AssemblyTitle>
     <Product>Crawling.MySql.Test</Product>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <OutputPath>..\..\..\bin\$(Configuration)\ServerComponent\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.3.1" />

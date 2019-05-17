@@ -33,7 +33,7 @@ Describe 'Project Tests' -Tags 'CodeQuality' , 'Quality' {
                     It "$pattern found in $projectFile" {
 
                         Get-Content $projectFile |
-                            Select-String -Pattern $pattern |
+                            Select-String -SimpleMatch $pattern |
                                 Should -Not -BeNullOrEmpty
                     }
                 }
@@ -47,7 +47,7 @@ Describe 'Project Tests' -Tags 'CodeQuality' , 'Quality' {
                     It "No $pattern found in $projectFile" {
 
                         Get-Content $projectFile |
-                            Select-String -Pattern $pattern |
+                            Select-String -SimpleMatch $pattern |
                                 Should -BeNullOrEmpty
                     }
                 }

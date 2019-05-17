@@ -6,7 +6,7 @@
     <TargetFramework>net452</TargetFramework>
     <AssemblyTitle>Crawling.MySql.Core</AssemblyTitle>
     <Product>Crawling.MySql.Core</Product>
-    <OutputPath>..\..\..\bin\$(Configuration)\ServerComponent\</OutputPath>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
