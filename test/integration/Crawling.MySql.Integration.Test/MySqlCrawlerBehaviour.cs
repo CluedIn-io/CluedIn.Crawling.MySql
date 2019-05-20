@@ -8,14 +8,14 @@ using Xunit;
 
 namespace Crawling.MySql.Integration.Test
 {
-    public class Program 
+    public class MySqlCrawlerBehaviour
     {
         [Fact(Skip = "System.NullReferenceException. Object reference not set to an instance of an object.")]
-        public void Main ()
+        public void RunAllTests ()
         {
             var executingFolder = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
             var p = new DebugCrawlerHost<MySqlCrawlJobData>(executingFolder, MySqlConstants.ProviderName);
-                        
+
             p.ProcessClue += MethodDoingSomethingWithClue;
 
             p.Execute(MySqlConfiguration.Create(),MySqlConstants.ProviderId);
