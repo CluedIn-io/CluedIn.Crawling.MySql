@@ -25,7 +25,7 @@ namespace CluedIn.Provider.MySql
         public MySqlProvider([NotNull] ApplicationContext appContext, IMySqlClientFactory clientFactory)
             : base(appContext, MySqlConstants.CreateProviderMetadata())
         {
-            this.clientFactory = clientFactory;
+            this.clientFactory = clientFactory ?? throw new ArgumentNullException(nameof(clientFactory));
         }
 
         public override async Task<CrawlJobData> GetCrawlJobData(ProviderUpdateContext context, [NotNull] IDictionary<string, object> configuration, Guid organizationId, Guid userId, Guid providerDefinitionId)
