@@ -27,7 +27,7 @@ namespace CluedIn.Crawling.MySql.Infrastructure
 
         private readonly MySqlCrawlJobData nameCrawlJobData;
 
-        private const string ConnectionString = "server=localhost;userid=jerrong;password=jerrong; database=sakila";
+        private const string ConnectionString = "server=localhost;userid=jerrong;password=jerrong; database=sakila"; // TODO developer connection string
 
         public MySqlClient([NotNull] ILogger log, [NotNull] MySqlCrawlJobData mysqlCrawlJobData)
         {
@@ -42,7 +42,7 @@ namespace CluedIn.Crawling.MySql.Infrastructure
 
             using (var connection = new MySqlConnection(ConnectionString))
             {
-                const string tableSql = "SELECT table_name FROM information_schema.tables where table_schema=\'sakila\';";
+                const string tableSql = "SELECT table_name FROM information_schema.tables where table_schema=\'sakila\';";  // TODO reference to MySQL sample database, ref: https://dev.mysql.com/doc/sakila/en/
 
                 connection.Open();
 
