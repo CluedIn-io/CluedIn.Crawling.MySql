@@ -1,13 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <SkipValidatePackageReferences>true</SkipValidatePackageReferences>
-    <ProjectGuid>{DE5BE162-01C7-4D2F-98F4-144E2EEB5993}</ProjectGuid>
+    <ProjectGuid>{DC7F7066-EDE8-49FF-AB6B-1C0143CF349C}</ProjectGuid>
     <RootNamespace>CluedIn.Crawling.MySql.Infrastructure</RootNamespace>
     <AssemblyName>CluedIn.Crawling.MySql.Infrastructure</AssemblyName>
     <TargetFramework>net452</TargetFramework>
-    <AssemblyTitle>Crawling._Crawler_.Client</AssemblyTitle>
-    <Product>Crawling._Crawler_.Client</Product>
+    <AssemblyTitle>Crawling.MySql.Infrastructure</AssemblyTitle>
+    <Product>CCrawling.MySql.Infrastructure</Product>
     <OutputPath>bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -17,15 +15,38 @@
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="4.3.1" />
+    <PackageReference Include="Castle.Windsor" Version="4.1.1" />
+    <PackageReference Include="CluedIn.Core" Version="2.18.0-alpha0847" />
+    <PackageReference Include="MySql.Data" Version="6.10.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\MySql.Core\Crawling.MySql.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CluedIn.Core" Version="2.18.0-alpha0846" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-    <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
-    <PackageReference Include="System.Net.Http" Version="4.3.3" />
-    <PackageReference Include="RestSharp" Version="105.2.3" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
-    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+    <Content Include="docs\MySqlCommand.xml" />
+    <Content Include="docs\MySqlCommandBuilder.xml" />
+    <Content Include="docs\MySqlConnection.xml" />
+    <Content Include="docs\MySqlConnectionStringBuilder.xml" />
+    <Content Include="docs\MySqlDataAdapter.xml" />
+    <Content Include="docs\MySqlDataReader.xml" />
+    <Content Include="docs\MySqlException.xml" />
+    <Content Include="docs\MySqlHelper.xml" />
+    <Content Include="docs\MySqlParameter.xml" />
+    <Content Include="docs\MySqlParameterCollection.xml" />
+    <Content Include="docs\MySqlTransaction.xml" />
   </ItemGroup>
 </Project>
