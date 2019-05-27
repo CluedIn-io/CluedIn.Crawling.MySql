@@ -1,51 +1,22 @@
-# version: '3.4'
-
-# services:
-
-# # Crawler dependencies
-
-#   mysql:
-#     image: mysql:5.7
-#     restart: always
-#     environment:
-#       MYSQL_DATABASE: 'db'
-#       MYSQL_USER: 'user'
-#       MYSQL_PASSWORD: 'password'
-#       MYSQL_ROOT_PASSWORD: 'password'
-#     ports:
-#       - '3306:3306'
-#     expose:
-#       - '3306'
-#     volumes:
-#       - mysql-db:/var/lib/mysql
-
-# # Database utilities
-
-#   adminer:
-#     image: clue/adminer
-#     ports:
-#       - "8090:80"
-#     depends_on:
-#     - mysql
-
-# volumes:
-#   mysql-db:
-
-
-  # Use root/example as user/password credentials
-
-version: '3.1'
+version: '3.4'
 
 services:
+
+  # Required infrastructure
+
+  db:
+    # Use root/sakila as user/password credentials
+    image: restsql/mysql-sakila
+    restart: always
+    ports:
+      - 3306:3306
+
+  # Database utilities
 
   adminer:
     image: adminer
     restart: always
     ports:
-      - 8080:8080
-
-  db:
-    image: mysql:5.6
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: example
+      - 8090:8080
+    depends_on:
+    - db
