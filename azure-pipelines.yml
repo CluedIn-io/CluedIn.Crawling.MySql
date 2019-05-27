@@ -64,6 +64,7 @@ jobs:
     displayName: 'Run Unit and Integration tests'
     inputs:
       command: 'test'
+      arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) /p:CollectCoverage=true /p:Exclude="[xunit.*]*"'
 
   # Acceptance Test
   - task: richardfennellBM.BM-VSTS-PesterRunner-Task.Pester-Task.Pester@8

@@ -1,7 +1,6 @@
 using System.IO;
 using System.Reflection;
 using CluedIn.Core.Data;
-using CluedIn.CrawlerMySql.Console;
 using CluedIn.Crawling;
 using CluedIn.Crawling.MySql.Core;
 using Xunit;

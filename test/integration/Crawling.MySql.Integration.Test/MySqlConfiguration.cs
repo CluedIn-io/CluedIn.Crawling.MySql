@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace CluedIn.CrawlerMySql.Console
+namespace Crawling.MySql.Integration.Test
 {
     public static class MySqlConfiguration
     {
