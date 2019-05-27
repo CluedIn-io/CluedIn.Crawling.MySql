@@ -1,32 +1,51 @@
-version: '3.4'
+# version: '3.4'
+
+# services:
+
+# # Crawler dependencies
+
+#   mysql:
+#     image: mysql:5.7
+#     restart: always
+#     environment:
+#       MYSQL_DATABASE: 'db'
+#       MYSQL_USER: 'user'
+#       MYSQL_PASSWORD: 'password'
+#       MYSQL_ROOT_PASSWORD: 'password'
+#     ports:
+#       - '3306:3306'
+#     expose:
+#       - '3306'
+#     volumes:
+#       - mysql-db:/var/lib/mysql
+
+# # Database utilities
+
+#   adminer:
+#     image: clue/adminer
+#     ports:
+#       - "8090:80"
+#     depends_on:
+#     - mysql
+
+# volumes:
+#   mysql-db:
+
+
+  # Use root/example as user/password credentials
+
+version: '3.1'
 
 services:
 
-# Crawler dependencies
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
 
-  mysql:
-    image: mysql:5.7
+  db:
+    image: mysql:5.6
     restart: always
     environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
-    ports:
-      - '3306:3306'
-    expose:
-      - '3306'
-    volumes:
-      - mysql-db:/var/lib/mysql
-
-# Database utilities
-
-  adminer:
-    image: clue/adminer
-    ports:
-      - "8090:80"
-    depends_on:
-    - mysql
-
-volumes:
-  mysql-db:
+      MYSQL_ROOT_PASSWORD: example
