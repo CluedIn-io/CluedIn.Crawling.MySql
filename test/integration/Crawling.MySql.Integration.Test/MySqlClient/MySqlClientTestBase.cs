@@ -1,9 +1,9 @@
-﻿using CluedIn.Core.Logging;
+using CluedIn.Core.Logging;
 using CluedIn.Crawling.MySql.Core;
 using CluedIn.Crawling.MySql.Infrastructure;
 using Moq;
 
-namespace Crawling.MySql.Integration.Test
+namespace Crawling.MySql.Integration.Test.MySqlClient
 {
     public class MySqlClientTestBase
     {

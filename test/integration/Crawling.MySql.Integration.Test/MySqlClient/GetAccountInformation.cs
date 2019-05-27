@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace Crawling.MySql.Integration.Test
+namespace Crawling.MySql.Integration.Test.MySqlClient
 {
     public class GetAccountInformation : MySqlClientTestBase
     {
