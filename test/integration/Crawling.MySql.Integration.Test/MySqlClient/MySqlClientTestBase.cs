@@ -1,21 +1,26 @@
+﻿using System.Configuration;
 using CluedIn.Core.Logging;
 using CluedIn.Crawling.MySql.Core;
-using CluedIn.Crawling.MySql.Infrastructure;
 using Moq;
 
 namespace Crawling.MySql.Integration.Test.MySqlClient
 {
     public class MySqlClientTestBase
     {
-        protected readonly MySqlClient Sut;
+        protected readonly CluedIn.Crawling.MySql.Infrastructure.MySqlClient Sut;
 
-        private const string ConnectionString = "server=localhost;userid=root;password=sakila; database=sakila"; // TODO developer connection string
+        protected readonly Mock<ILogger> Logger;
 
         public MySqlClientTestBase()
         {
-            var logger = new Mock<ILogger>().Object;   // TODO Logger not used in MySqlClient ...
+            Logger = new Mock<ILogger>();
 
-            Sut = new MySqlClient(logger, new MySqlCrawlJobData { ConnectionString = ConnectionString });
+            var crawlJobData = new MySqlCrawlJobData
+            {
+                ConnectionString = ConfigurationManager.ConnectionStrings["SampleDatabase"].ConnectionString
+            };
+
+            Sut = new CluedIn.Crawling.MySql.Infrastructure.MySqlClient(Logger.Object, crawlJobData);
         }
     }
 }
