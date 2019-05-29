@@ -29,18 +29,7 @@ namespace Provider.MySql.Test.MySqlProvider
                 .ShouldEqual("jobData");
         }
 
-        [Theory(Skip = "MySql.Data.MySqlClient.MySqlException : Unable to connect to any of the specified MySQL hosts")]  // TODO move to integration test
-        [InlineAutoData]
-        public void Returns_ValidDictionary_Instance(Guid organizationId, Guid userId, Guid providerDefinitionId)
-        {
-            Sut.GetHelperConfiguration(null, this._jobData, organizationId, userId, providerDefinitionId)
-                .Result
-                .ShouldNotBeNull();
-        }
-
-        // Add test for throws arg exception for incorrect data param
-
-
+        // TODO Add test for throws arg exception for incorrect data param
 
         [Theory(Skip = "System.NullReferenceException : Object reference not set to an instance of an object")]
         [InlineAutoData("Sample-Property","SampleProperty","some-value")]

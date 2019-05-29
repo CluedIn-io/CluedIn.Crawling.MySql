@@ -32,5 +32,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\MySql.Core\Crawling.MySql.Core.csproj" />
     <ProjectReference Include="..\..\..\src\MySql.Infrastructure\Crawling.MySql.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\unit\Provider.MySql.Test\Provider.MySql.Unit.Test.csproj" />
   </ItemGroup>
 </Project>
