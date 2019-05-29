@@ -64,7 +64,7 @@ jobs:
     displayName: 'Run Unit tests'
     inputs:
       command: 'test'
-      arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --filter "FullyQualifiedName~Unit.Test" /p:CollectCoverage=true /p:Exclude="[xunit.*]*"'
+      arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) /p:CollectCoverage=true /p:Exclude="[xunit.*]*%2c[*.Test]*" --filter Unit'
 
 # TODO docker-compose up -d
   # # Integration Test
@@ -72,7 +72,7 @@ jobs:
   #   displayName: 'Run Integration tests'
   #   inputs:
   #     command: 'test'
-  #     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --filter "FullyQualifiedName~Integration.Test" /p:CollectCoverage=true /p:Exclude="[xunit.*]*"'
+  #     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)  /p:CollectCoverage=true /p:Exclude="[xunit.*]*%2c[*.Test]*" --filter Integration'
 
   # Acceptance Test
   - task: richardfennellBM.BM-VSTS-PesterRunner-Task.Pester-Task.Pester@8
