@@ -1,12 +1,12 @@
 using System;
 using System.Linq;
-using CluedIn.Core.Crawling;
 using AutoFixture.Xunit2;
+using CluedIn.Core.Crawling;
+using CluedIn.Crawling.MySql.Core;
 using Should;
 using Xunit;
-using CluedIn.Crawling.MySql.Core;
 
-namespace Provider.MySql.Test.MySqlProvider
+namespace Provider.MySql.Unit.Test.MySqlProvider
 {
     public class GetHelperConfigurationBehaviour : MySqlProviderTest
     {

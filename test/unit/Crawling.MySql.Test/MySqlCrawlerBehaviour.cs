@@ -6,7 +6,7 @@ using Moq;
 using Should;
 using Xunit;
 
-namespace Crawling.MySql.Test
+namespace Crawling.MySql.Unit.Test
 {
     public class MySqlCrawlerBehaviour
     {

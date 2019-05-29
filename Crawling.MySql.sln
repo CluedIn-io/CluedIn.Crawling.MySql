@@ -10,9 +10,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crawling.MySql.Infrastructu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Provider.MySql", "src\MySql.Provider\Provider.MySql.csproj", "{E9C499B9-DFE2-470C-8215-11CCACD398DD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crawling.MySql.Test", "test\unit\Crawling.MySql.Test\Crawling.MySql.Test.csproj", "{D5313469-60EA-4B41-9D76-347F5D4101E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crawling.MySql.Unit.Test", "test\unit\Crawling.MySql.Test\Crawling.MySql.Unit.Test.csproj", "{D5313469-60EA-4B41-9D76-347F5D4101E8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Provider.MySql.Test", "test\unit\Provider.MySql.Test\Provider.MySql.Test.csproj", "{24C48AD5-562B-4C9B-9FC3-52EB0C79007C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Provider.MySql.Unit.Test", "test\unit\Provider.MySql.Test\Provider.MySql.Unit.Test.csproj", "{24C48AD5-562B-4C9B-9FC3-52EB0C79007C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Config", "_Config", "{153182F5-8A66-4AF5-AEE5-A35ACF793692}"
 	ProjectSection(SolutionItems) = preProject
@@ -39,7 +39,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{D10B16B9-F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{CBD22F04-6415-467D-B079-44D5B01965D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawling.MySql.Integration.Test", "test\integration\Crawling.MySql.Integration.Test\Crawling.MySql.Integration.Test.csproj", "{99F9EA75-A5F3-48CF-87E4-C4B7481787D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crawling.MySql.Integration.Test", "test\integration\Crawling.MySql.Integration.Test\Crawling.MySql.Integration.Test.csproj", "{99F9EA75-A5F3-48CF-87E4-C4B7481787D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
