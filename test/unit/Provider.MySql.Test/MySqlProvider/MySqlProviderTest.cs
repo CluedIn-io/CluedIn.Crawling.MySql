@@ -4,7 +4,7 @@ using CluedIn.Core.Providers;
 using CluedIn.Crawling.MySql.Infrastructure.Factories;
 using Moq;
 
-namespace Provider.MySql.Test.MySqlProvider
+namespace Provider.MySql.Unit.Test.MySqlProvider
 {
     public abstract class MySqlProviderTest
     {

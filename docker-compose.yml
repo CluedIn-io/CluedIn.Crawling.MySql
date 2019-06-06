@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+
+  # Required infrastructure
+
+  db:
+    # Use root/sakila as user/password credentials
+    image: restsql/mysql-sakila
+    restart: always
+    ports:
+      - "3306:3306"
+
+  # Database utilities
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8090:8080"
+    depends_on:
+    - db

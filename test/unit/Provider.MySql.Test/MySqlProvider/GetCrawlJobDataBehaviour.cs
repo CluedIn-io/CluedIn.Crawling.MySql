@@ -1,10 +1,10 @@
-using AutoFixture.Xunit2;
 using System;
 using System.Collections.Generic;
+using AutoFixture.Xunit2;
 using CluedIn.Core;
 using Xunit;
 
-namespace Provider.MySql.Test.MySqlProvider
+namespace Provider.MySql.Unit.Test.MySqlProvider
 {
     public class GetCrawlJobDataBehaviour : MySqlProviderTest
     {

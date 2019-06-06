@@ -59,11 +59,20 @@ jobs:
     inputs:
       command: 'build'
 
-  # Unit and Integration Test
+  # Unit Test
   - task: DotNetCoreCLI@2
-    displayName: 'Run Unit and Integration tests'
+    displayName: 'Run Unit tests'
     inputs:
       command: 'test'
+      arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) /p:CollectCoverage=true /p:Exclude="[xunit.*]*%2c[*.Test]*" --filter Unit --logger "trx" /p:CoverletOutputFormat=cobertura'
+
+# TODO docker-compose up -d
+  # # Integration Test
+  # - task: DotNetCoreCLI@2
+  #   displayName: 'Run Integration tests'
+  #   inputs:
+  #     command: 'test'
+  #     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)  /p:CollectCoverage=true /p:Exclude="[xunit.*]*%2c[*.Test]*" --filter Integration --logger "trx" /p:CoverletOutputFormat=cobertura'
 
   # Acceptance Test
   - task: richardfennellBM.BM-VSTS-PesterRunner-Task.Pester-Task.Pester@8

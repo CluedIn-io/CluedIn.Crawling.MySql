@@ -22,7 +22,4 @@
   <ItemGroup>
     <PackageReference Include="CluedIn.Core" Version="2.18.0-alpha0847" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
 </Project>

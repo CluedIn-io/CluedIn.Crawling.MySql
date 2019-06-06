@@ -27,6 +27,8 @@ namespace CluedIn.Crawling.MySql.ClueProducers
             // TODO: Create clue specifying the type of entity it is and ID            
             var clue = _factory.Create(input.TableMapping.EntityType, input.Columns.ElementAt(input.TableMapping.Columns.FindIndex(c => c.IsId)).ToString(), accountId);
 
+            clue.ValidationRuleSuppressions.Add(CluedIn.Core.Constants.Validation.Rules.PROPERTIES_001_MustExist);
+
             // TODO: Populate clue data
             var data = clue.Data.EntityData;
 

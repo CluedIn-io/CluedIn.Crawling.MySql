@@ -27,20 +27,18 @@ namespace CluedIn.Crawling.MySql.Infrastructure
 
         private readonly MySqlCrawlJobData nameCrawlJobData;
 
-        private const string ConnectionString = "server=localhost;userid=jerrong;password=jerrong; database=sakila"; // TODO developer connection string
-
         public MySqlClient([NotNull] ILogger log, [NotNull] MySqlCrawlJobData mysqlCrawlJobData)
         {
             this.log = log ?? throw new ArgumentNullException(nameof(log));
 
-            this.nameCrawlJobData = mysqlCrawlJobData ?? throw new ArgumentNullException(nameof(mysqlCrawlJobData));
+            nameCrawlJobData = mysqlCrawlJobData ?? throw new ArgumentNullException(nameof(mysqlCrawlJobData));
         }
 
         public IEnumerable<Model> GetFolders()
         {
             var tables = new List<string>();
 
-            using (var connection = new MySqlConnection(ConnectionString))
+            using (var connection = new MySqlConnection(nameCrawlJobData.ConnectionString))
             {
                 const string tableSql = "SELECT table_name FROM information_schema.tables where table_schema=\'sakila\';";  // TODO reference to MySQL sample database, ref: https://dev.mysql.com/doc/sakila/en/
 
@@ -60,24 +58,17 @@ namespace CluedIn.Crawling.MySql.Infrastructure
 
             foreach (var tableName in tables)
             {
-                using (var connection = new MySqlConnection(ConnectionString))
+                var cmdBuilder = new MySqlCommandBuilder();
+                string tbName = cmdBuilder.QuoteIdentifier(tableName);
+
+                using (var connection = new MySqlConnection(nameCrawlJobData.ConnectionString))
                 {
                     connection.Open();
 
                     using (var cmd = new MySqlCommand())
                     {
                         cmd.Connection = connection;
-                        cmd.CommandText = "SELECT * FROM @tableName";
-
-                        var parameter = new MySqlParameter
-                        {
-                            ParameterName = "@tableName",
-                            MySqlDbType = MySqlDbType.VarString,
-                            Direction = ParameterDirection.Input,
-                            Value = tableName
-                        };
-
-                        cmd.Parameters.Add(parameter);
+                        cmd.CommandText = $"SELECT * FROM {tbName}";
 
                         using (var reader = cmd.ExecuteReader(CommandBehavior.CloseConnection))
                         {
@@ -88,7 +79,7 @@ namespace CluedIn.Crawling.MySql.Infrastructure
                                 var columns = new List<object>();
                                 var model = new Model();
 
-                                for (var i = 0; i <= reader.FieldCount; i++)
+                                for (var i = 0; i < reader.FieldCount; i++)
                                 {
                                     columns.Add(reader[i].ToString());
                                 }
@@ -105,8 +96,8 @@ namespace CluedIn.Crawling.MySql.Infrastructure
 
         public AccountInformation GetAccountInformation()
         {
-            MySqlConnection connection = new MySqlConnection(nameCrawlJobData.ConnectionString);
-            return new AccountInformation(connection.Database, this.nameCrawlJobData.ConnectionString);
+            var connection = new MySqlConnection(nameCrawlJobData.ConnectionString);
+            return new AccountInformation(connection.Database, nameCrawlJobData.ConnectionString);
         }
     }
 }
