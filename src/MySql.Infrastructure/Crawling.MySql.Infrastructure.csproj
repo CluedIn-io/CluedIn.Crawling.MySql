@@ -18,6 +18,7 @@
     <PackageReference Include="Castle.Core" Version="4.3.1" />
     <PackageReference Include="Castle.Windsor" Version="4.1.1" />
     <PackageReference Include="CluedIn.Core" Version="2.18.0-alpha0847" />
+    <PackageReference Include="CluedIn.Crawling" Version="2.18.0-alpha0847" />
     <PackageReference Include="MySql.Data" Version="6.10.7" />
   </ItemGroup>
   <ItemGroup>
@@ -35,18 +36,5 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MySql.Core\Crawling.MySql.Core.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="docs\MySqlCommand.xml" />
-    <Content Include="docs\MySqlCommandBuilder.xml" />
-    <Content Include="docs\MySqlConnection.xml" />
-    <Content Include="docs\MySqlConnectionStringBuilder.xml" />
-    <Content Include="docs\MySqlDataAdapter.xml" />
-    <Content Include="docs\MySqlDataReader.xml" />
-    <Content Include="docs\MySqlException.xml" />
-    <Content Include="docs\MySqlHelper.xml" />
-    <Content Include="docs\MySqlParameter.xml" />
-    <Content Include="docs\MySqlParameterCollection.xml" />
-    <Content Include="docs\MySqlTransaction.xml" />
   </ItemGroup>
 </Project>

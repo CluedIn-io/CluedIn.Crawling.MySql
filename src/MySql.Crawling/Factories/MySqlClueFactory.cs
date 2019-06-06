@@ -17,6 +17,8 @@ namespace CluedIn.Crawling.MySql.Factories
         {
             if (clue == null) throw new ArgumentNullException(nameof(clue));
 
+            clue.ValidationRuleSuppressions.Add(CluedIn.Core.Constants.Validation.Rules.PROPERTIES_001_MustExist);
+
             var data = clue.Data;
             data.EntityData.Name = MySqlConstants.CrawlerName;
             data.EntityData.Uri = new Uri(MySqlConstants.Uri);

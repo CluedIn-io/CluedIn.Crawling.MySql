@@ -31,8 +31,8 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.3.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\source\repos\CluedIn.Crawler.Console\src\CluedIn.Crawler.Console\CluedIn.Crawler.Console.csproj" />
     <ProjectReference Include="..\..\..\src\MySql.Core\Crawling.MySql.Core.csproj" />
+    <ProjectReference Include="..\..\..\src\MySql.Crawling\Crawling.MySql.csproj" />
     <ProjectReference Include="..\..\..\src\MySql.Infrastructure\Crawling.MySql.Infrastructure.csproj" />
     <ProjectReference Include="..\..\unit\Provider.MySql.Test\Provider.MySql.Unit.Test.csproj" />
   </ItemGroup>
