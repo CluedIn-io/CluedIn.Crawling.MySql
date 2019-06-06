@@ -1,31 +1,42 @@
 using System.IO;
 using System.Reflection;
+using Castle.Windsor;
 using CluedIn.Core.Data;
-using CluedIn.Crawling;
+using CluedIn.Crawler.Console.Crawling;
 using CluedIn.Crawling.MySql.Core;
+using Moq;
+using Serilog;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Crawling.MySql.Integration.Test
 {
     public class MySqlCrawlerBehaviour
     {
-        [Fact(Skip = "System.NullReferenceException. Object reference not set to an instance of an object.")]
-        public void RunAllTests ()
+        private readonly ITestOutputHelper _testOutputHelper;
+        private Mock<ILogger> _logger;
+
+        public MySqlCrawlerBehaviour(ITestOutputHelper testOutputHelper)
+        {
+            _testOutputHelper = testOutputHelper;
+        }
+
+        [Fact]
+        public void ExecuteCrawlerHostDoesNotThrow ()
         {
             var executingFolder = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
-            var p = new DebugCrawlerHost<MySqlCrawlJobData>(executingFolder, MySqlConstants.ProviderName);
+            var windsorContainer = new WindsorContainer();
+            _logger = new Mock<ILogger>();
+            var p = new CrawlerHost<MySqlCrawlJobData>(windsorContainer, _logger.Object, executingFolder, MySqlConstants.ProviderName);
 
             p.ProcessClue += MethodDoingSomethingWithClue;
 
             p.Execute(MySqlConfiguration.Create(),MySqlConstants.ProviderId);
         }
 
-        private static void MethodDoingSomethingWithClue(Clue clue)
+        private void MethodDoingSomethingWithClue(Clue clue)
         {
-            // This is your opportunity to add custom actions for clue processing testing
-            var info = clue.Serialize(); // this outputs the full data of the clue. Useful for debugging.
-           // var info = clue.OriginEntityCode.Value; //Just outputs the ID of the clue
-            System.Console.WriteLine(info);
+            _testOutputHelper.WriteLine($"Clue ID: {clue.OriginEntityCode.Value} Object: {clue.Serialize()}");
         }
     }
 }
