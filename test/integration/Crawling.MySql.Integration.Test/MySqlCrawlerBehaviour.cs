@@ -14,24 +14,32 @@ namespace Crawling.MySql.Integration.Test
     public class MySqlCrawlerBehaviour
     {
         private readonly ITestOutputHelper _testOutputHelper;
-        private Mock<ILogger> _logger;
+        private readonly CrawlerHost<MySqlCrawlJobData> _sut;
 
         public MySqlCrawlerBehaviour(ITestOutputHelper testOutputHelper)
         {
             _testOutputHelper = testOutputHelper;
+
+            var executingFolder = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
+            var windsorContainer = new WindsorContainer();
+
+            var logger = new Mock<ILogger>();
+
+            _sut = new CrawlerHost<MySqlCrawlJobData>(windsorContainer, logger.Object, executingFolder, $"*{MySqlConstants.ProviderName}*");
+
+            _sut.ProcessClue += MethodDoingSomethingWithClue;
+        }
+
+        [Fact]
+        public void CrawlerHostCanBeStarted()
+        {
+            Assert.NotNull(_sut);
         }
 
         [Fact]
         public void ExecuteCrawlerHostDoesNotThrow ()
         {
-            var executingFolder = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
-            var windsorContainer = new WindsorContainer();
-            _logger = new Mock<ILogger>();
-            var p = new CrawlerHost<MySqlCrawlJobData>(windsorContainer, _logger.Object, executingFolder, MySqlConstants.ProviderName);
-
-            p.ProcessClue += MethodDoingSomethingWithClue;
-
-            p.Execute(MySqlConfiguration.Create(),MySqlConstants.ProviderId);
+            _sut.Execute(MySqlConfiguration.Create(),MySqlConstants.ProviderId);
         }
 
         private void MethodDoingSomethingWithClue(Clue clue)
