@@ -24,7 +24,7 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CluedIn.Crawling" Version="2.18.0-alpha0847" />
+    <PackageReference Include="CluedIn.Crawling" Version="2.3.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.3.2" />
     <PackageReference Include="MSTest.TestFramework" Version="1.3.2" />
   </ItemGroup>

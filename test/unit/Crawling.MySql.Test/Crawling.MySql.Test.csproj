@@ -14,8 +14,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.3.1" />
-    <PackageReference Include="CluedIn.Core" Version="2.18.0-alpha0847" />
-    <PackageReference Include="CluedIn.Crawling" Version="2.18.0-alpha0847" />
+    <PackageReference Include="CluedIn.Core" Version="2.3.0" />
+    <PackageReference Include="CluedIn.Crawling" Version="2.3.0" />
     <PackageReference Include="Moq" Version="4.5.21" />
     <PackageReference Include="Should" Version="1.1.20" />
   </ItemGroup>
