@@ -2,16 +2,16 @@ using Castle.MicroKernel.Registration;
 
 using CluedIn.Core;
 using CluedIn.Core.Providers;
+using CluedIn.Core.Server;
 using CluedIn.Crawling.MySql.Core;
 using CluedIn.Crawling.MySql.Infrastructure.Installers;
-using CluedIn.Server;
 
 using ComponentHost;
 
 namespace CluedIn.Provider.MySql
 {
     [Component(MySqlConstants.ProviderName, "Providers", ComponentType.Service, ServerComponents.ProviderWebApi, Components.Server, Components.DataStores, Isolation = ComponentIsolation.NotIsolated)]
-    public class MySqlProviderComponent : ServiceApplicationComponent<EmbeddedServer>
+    public class MySqlProviderComponent : ServiceApplicationComponent<IServer>
     {
         /**********************************************************************************************************
          * CONSTRUCTOR

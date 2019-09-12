@@ -20,7 +20,7 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CluedIn.Core" Version="2.18.0-alpha0847" />
+    <PackageReference Include="CluedIn.Core" Version="2.3.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
